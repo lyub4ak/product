@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('products', 'ProductController');
+
+Route::post('products/delete-image', 'ProductController@deleteImage')->name('products.deleteImage');
+
+Route::get('products/json/{product}', 'ProductController@json')->name('products.json');
